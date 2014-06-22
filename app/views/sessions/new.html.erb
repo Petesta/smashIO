@@ -1,0 +1,14 @@
+<%= form_tag sessions_path do %>
+  <center><%= label_tag :email %>
+  <%= email_field_tag :email, '',  autofocus: true %>
+
+  <div id="email-space"></div>
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password, '', autofocus: true %>
+
+  <div id="password-space"></div>
+
+  <%= submit_tag "Log In", class: "btn btn-blue btn-large" %>
+  </center>
+<% end %>
