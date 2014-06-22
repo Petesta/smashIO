@@ -6,7 +6,7 @@
 
 <div class="span-6 offset-5">
   <%= form_for @user, html: { class: 'user-form' } do |f| %>
-    <%= f.label :full_name, "Full Name" %>
+    <%= f.label :full_name, 'Full Name' %>
     <%= f.text_field :full_name, autofocus: true %>
 
     <%= f.label :email %>
@@ -18,6 +18,6 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
 
-    <%= submit_tag "Sign Up", class: "btn btn-large btn-blue" %>
+    <%= submit_tag 'Sign Up', class: 'btn btn-blue btn-large' %>
   <% end %>
 </div>

@@ -1,6 +1,6 @@
 Smashio::Application.routes.draw do
   resources :users
-  resources :videos
+  resources :videos, only: [:new, :create, :index]
 
   root :to => 'users#index'
 

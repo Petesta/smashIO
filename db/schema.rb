@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619195034) do
+ActiveRecord::Schema.define(version: 20140622060203) do
 
   create_table "users", force: true do |t|
     t.string   "full_name"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 20140619195034) do
     t.string   "auth_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "videos", force: true do |t|
+    t.string   "link"
+    t.string   "uid"
+    t.string   "title"
+    t.string   "author"
+    t.string   "duration"
+    t.integer  "likes"
+    t.integer  "dislikes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
 end

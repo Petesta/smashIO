@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  link: MyString
+  uid: MyString
+  title: MyString
+  author: MyString
+  duration: MyString
+  likes: 
+  dislikes: 
+
+two:
+  link: MyString
+  uid: MyString
+  title: MyString
+  author: MyString
+  duration: MyString
+  likes: 
+  dislikes: 

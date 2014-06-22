@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = "User successfully created!"
-      p "UsersController => User successfully created!"
       login_user(@user)
       redirect_to videos_url
     else

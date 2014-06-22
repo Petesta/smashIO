@@ -20,6 +20,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'protected_attributes'
 
+gem 'youtube_it'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
