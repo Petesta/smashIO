@@ -48,6 +48,7 @@ class Video < ActiveRecord::Base
       client = YouTubeIt::OAuth2Client.new(dev_key: ENV['YT_DEV'])
       p "the client is #{client}"
       video = client.by_video(uid)
+      p video
       self.title    = video.title
       self.duration = parse_duration(video.duration)
       self.author   = video.author.name

@@ -5,19 +5,31 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+  <script src="https://www.google.com/jsapi"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
 
-<div class="alert-container">
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= value %>
-    </div>
-  <% end %>
-</div>
+  <header>
+    <% if signed_in? %>
+      <%= current_user.full_name %>
+    <% end %>
+  </header>
 
-<%= yield %>
+  <div class="alert-container">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= value %>
+      </div>
+    <% end %>
+  </div>
 
+  <div class="page-wrap">
+    <%= yield %>
+  </div>
+
+  <footer></footer>
 </body>
 </html>
