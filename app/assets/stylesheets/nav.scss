@@ -1,3 +1,45 @@
 header {
-  background: #ffffff;
+  background-color: #4c66a4;
+  height: 45px;
+  left: 0;
+  padding: 5px;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  h1 { margin: 5px 25px 0 85px; }
+
+  h1 a,
+  li > a { 
+    color: white;
+    text-decoration: none;
+  }
+
+  ul {
+    color: white;
+    float: left;
+    font-size: 18px;
+    list-style-type: none;
+    margin: 12px 0 0 0;
+
+    li { display: inline-block; margin-left: 15px; }
+  }
+
+  .header-stack { float: left }
+}
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -40px;
+
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+
+.main-container {
+  margin: 0 0 0 20px;
+  position: absolute;
+  top: 100px;
 }

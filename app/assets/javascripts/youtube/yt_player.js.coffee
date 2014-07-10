@@ -1,11 +1,11 @@
 $ ->
-  $('.yt-preview').click -> makeVideoPlayer $(this).data('uid')
+  $('.yt-video').click -> makeVideoPlayer $(this).data('uid')
 
   # Initially YouTube player is not loaded
   window.ytPlayerLoaded = false
 
+  # Runs as soon as Google API is loaded
   _run = ->
-    # Runs as soon as Google API is loaded
     $('.yt-preview').first().click()
     return
  
@@ -25,7 +25,7 @@ $ ->
         }
         events: {
           'onReady': -> window.ytPlayerLoaded = true
-          'onError': (errorCode) -> alert("We are sorry, but the following error occured: " + errorCode)
+          'onError': (errorCode) -> alert("We are sorry, error: " + errorCode)
         }
       })
     else

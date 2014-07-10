@@ -22,6 +22,8 @@ gem 'protected_attributes'
 
 gem 'youtube_it'
 
+gem 'sunspot_rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

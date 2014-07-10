@@ -9,6 +9,10 @@ class Video < ActiveRecord::Base
 
   validates :link, presence: true
 
+  def filter_videos(video)
+    self.videos.select { || }
+  end
+
   def validate_yt_link
     p "here is the #{link}"
     uid = link.match(VALID_YT_REGEX)
