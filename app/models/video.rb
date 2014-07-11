@@ -88,24 +88,26 @@ class Video < ActiveRecord::Base
       self.keywords = video.keywords.join(" ")
     end
 
-    self.title    = video.title
-    self.author   = video.author.name
-    self.term     = video.categories[0].term
-    self.label    = video.categories[0].label
-    self.likes    = video.rating.likes
-    self.dislikes = video.rating.dislikes
-    self.duration = parse_duration(video.duration)
+    self.title       = video.title
+    self.author      = video.author.name
+    self.description = video.description
+    self.term        = video.categories[0].term
+    self.label       = video.categories[0].label
+    self.likes       = video.rating.likes
+    self.dislikes    = video.rating.dislikes
+    self.duration    = parse_duration(video.duration)
   end
 
   def set_yt_default_info
-    self.title    = ''
-    self.author   = ''
-    self.term     = ''
-    self.label    = ''
-    self.keywords = ''
-    self.likes    = 0
-    self.dislikes = 0
-    self.duration = '00:00:00'
+    self.title       = ''
+    self.author      = ''
+    self.description = ''
+    self.term        = ''
+    self.label       = ''
+    self.keywords    = ''
+    self.likes       = 0
+    self.dislikes    = 0
+    self.duration    = '00:00:00'
   end
 
   def get_yt_video_info
