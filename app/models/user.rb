@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
             format: { with: valid_email_regex },
             uniqueness: { case_sensitive: false }
 
+  def first_name
+    @first_name ||= full_name.split(' ').first
+  end
+
   private
 
   def generate_auth_token
