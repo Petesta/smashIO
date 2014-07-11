@@ -40,6 +40,14 @@ header {
 
 .main-container {
   margin: 0 0 0 20px;
-  position: absolute;
+  overflow: auto;
   top: 100px;
+  width: 100%;
 }
+
+footer {
+  background-color: #4c66a4;
+  width: 100%;
+}
+
+footer, .page-wrap:after { height: 40px; }

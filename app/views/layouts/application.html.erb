@@ -11,8 +11,8 @@
 </head>
 <body>
 
+  <%= render (signed_in?) ? 'shared/user_header' : 'shared/header' %>
   <div class="page-wrap">
-    <%= render (signed_in?) ? 'shared/user_header' : 'shared/header' %>
 
     <div class="alert-container">
       <% flash.each do |key, value| %>
@@ -24,9 +24,7 @@
     </div>
 
     <div class="main-container">
-      <div class="container">
-        <%= yield %>
-      </div>
+      <%= yield %>
     </div>
   </div> <!-- page-wrap -->
 
