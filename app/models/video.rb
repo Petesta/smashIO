@@ -22,7 +22,7 @@ class Video < ActiveRecord::Base
                  falco: 6, sheik: 6, zelda: 6, peach: 6, :"mr. game & watch" => 6,
                  marth: 6, :"ice climbers" => 6, ganondorf: 6, bowser: 6, :"dr. mario" => 2,
                  mewtwo: 2, pichu: 2, roy: 2, :"young link" => 2, ike: 3, ivysaur: 3,
-                 lucario: 3, lucas: 3, metaknight: 3, olimar: 3, :pit 3,
+                 lucario: 3, lucas: 3, metaknight: 3, olimar: 3, pit: 3,
                  :"pokemon trainer" => 3, rob: 3, snake: 3, sonic: 3, squirtle: 3,
                  :"toon link" => 3, wario: 3, wolf: 3, :"zero suit samus" => 3
                }
