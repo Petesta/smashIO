@@ -9,8 +9,8 @@
   <script src="https://www.google.com/jsapi"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
 </head>
-<body>
 
+<body>
   <%= render (signed_in?) ? 'shared/user_header' : 'shared/header' %>
   <div class="page-wrap">
 
@@ -28,6 +28,10 @@
     </div>
   </div> <!-- page-wrap -->
 
-  <footer></footer>
+  <footer>
+    <p>
+      Brought to you by<a href="https://github.com/Petesta"> Petesta</a>
+    </p>
+  </footer>
 </body>
 </html>
