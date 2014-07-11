@@ -14,9 +14,7 @@ class Video < ActiveRecord::Base
   end
 
   def validate_yt_link
-    p "here is the #{link}"
     uid = link.match(VALID_YT_REGEX)
-    p uid
     self.uid = uid[2] if uid && uid[2]
 
     if self.uid.length != 11
@@ -46,22 +44,40 @@ class Video < ActiveRecord::Base
     hr.to_s + ':' + min.to_s + ':' + sec.to_s
   end
 
+  def get_yt_metadata(video)
+    if video.keywords.empty?
+      self.keywords = ''
+    else
+      self.keywords = video.keywords.join(" ")
+    end
+
+    self.title    = video.title
+    self.author   = video.author.name
+    self.term     = video.categories[0].term
+    self.label    = video.categories[0].label
+    self.likes    = video.rating.likes
+    self.dislikes = video.rating.dislikes
+    self.duration = parse_duration(video.duration)
+  end
+
+  def set_yt_default_info
+    self.title    = ''
+    self.author   = ''
+    self.term     = ''
+    self.label    = ''
+    self.keywords = ''
+    self.likes    = 0
+    self.dislikes = 0
+    self.duration = '00:00:00'
+  end
+
   def get_yt_video_info
     begin
       client = YouTubeIt::OAuth2Client.new(dev_key: ENV['YT_DEV'])
       video = client.video_by(uid)
-      self.title    = video.title
-      self.duration = parse_duration(video.duration)
-      self.author   = video.author.name
-      self.keywords = video.rating.keywords
-      self.likes    = video.rating.likes
-      self.dislikes = video.rating.dislikes
+      get_yt_metadata(video)
     rescue
-      self.title = ''
-      self.duration = '00:00:00'
-      self.author = ''
-      self.likes = 0
-      self.dislikes = 0
+      set_yt_default_info
     end
   end
 
