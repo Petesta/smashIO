@@ -1,5 +1,5 @@
 $ ->
-  $('.yt-video').click -> makeVideoPlayer $(this).data('uid')
+  $('.yt-preview').click -> makeVideoPlayer $(this).data('uid')
 
   # Initially YouTube player is not loaded
   window.ytPlayerLoaded = false
