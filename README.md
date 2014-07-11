@@ -1,4 +1,4 @@
-# Welcome to SmashIO.
+# Welcome to SmashIO
 
 SmashIO is an application that allows you to view and filter your favorite Super Smash Bros. videos.
 
