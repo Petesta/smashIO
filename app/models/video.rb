@@ -53,6 +53,7 @@ class Video < ActiveRecord::Base
       self.title    = video.title
       self.duration = parse_duration(video.duration)
       self.author   = video.author.name
+      self.keywords = video.rating.keywords
       self.likes    = video.rating.likes
       self.dislikes = video.rating.dislikes
     rescue
