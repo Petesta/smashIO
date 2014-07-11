@@ -48,17 +48,22 @@ class Video < ActiveRecord::Base
 
   def get_yt_video_info
     begin
+      p "before ENV"
       p ENV['YT_DEV']
+      p "after ENV"
       client = YouTubeIt::OAuth2Client.new(dev_key: ENV['YT_DEV'])
       p "the client is #{client}"
       video = client.by_video(uid)
+      p "before video"
       p video
+      p "after video"
       self.title    = video.title
       self.duration = parse_duration(video.duration)
       self.author   = video.author.name
       self.likes    = video.rating.likes
       self.dislikes = video.rating.dislikes
     rescue
+      p "inside rescue"
       self.title = ''
       self.duration = '00:00:00'
       self.author = ''
